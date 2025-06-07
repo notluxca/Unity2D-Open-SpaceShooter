@@ -6,6 +6,8 @@ public abstract class Damageable : MonoBehaviour, IDamageable
     [SerializeField] protected float maxHealth = 2f;
     protected float currentHealth;
 
+    public float CurrentHealth => currentHealth; // <-- public read-only access
+
     protected virtual void Awake()
     {
         currentHealth = maxHealth;

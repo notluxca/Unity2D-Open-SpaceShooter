@@ -8,6 +8,7 @@ public class EnemyShip : Damageable
     [SerializeField] private float horizontalSpeed = 2f;
     [SerializeField] private float horizontalAmplitude = 3f;
     [SerializeField] private GameObject BulletPrefab;
+    [SerializeField] private float stopYPosition = -1.5f;
 
     private Camera mainCamera;
     private float startX;
@@ -33,7 +34,12 @@ public class EnemyShip : Damageable
 
     private void Move()
     {
-        float newY = transform.position.y - verticalSpeed * Time.deltaTime;
+        float newY = transform.position.y;
+
+        if (newY > stopYPosition)
+        {
+            newY -= verticalSpeed * Time.deltaTime;
+        }
 
         // Movimento horizontal oscilante
         float newX = startX + Mathf.Sin(Time.time * horizontalSpeed + timeOffset) * horizontalAmplitude;
@@ -72,3 +78,4 @@ public class EnemyShip : Damageable
         }
     }
 }
+
