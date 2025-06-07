@@ -61,6 +61,7 @@ public class EnemyShip : Damageable
     protected override void Die()
     {
         FindAnyObjectByType<ScoreManager>().AddScore(10);
+        Debug.Log("Enemy Ship Died");
         base.Die();
     }
 

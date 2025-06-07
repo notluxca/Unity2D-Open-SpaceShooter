@@ -103,7 +103,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfe203b66737574d99e23bb0b8052ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 2
+  feedbackScale: 1.2
+  feedbackDuration: 0.15
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
   speed: 3
   rotationSpeed: 200
   playerLayerMask:

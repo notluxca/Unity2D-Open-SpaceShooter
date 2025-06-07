@@ -9,6 +9,7 @@ public class PlayerController : Damageable
     private float dirX;
     private float playerHalfWidth;
     private ShootController shootController;
+    public static Action PlayerDied;
 
 
     protected override void Awake()
@@ -61,6 +62,7 @@ public class PlayerController : Damageable
     protected override void Die()
     {
         Debug.Log("Player Died");
+        PlayerDied?.Invoke();
         // custom death logic to player
         base.Die();
     }

@@ -6,11 +6,11 @@ public class EnemySpawner : MonoBehaviour
 {
     [Header("Enemy Settings")]
     [SerializeField] private List<GameObject> enemyPrefabs;
-    [SerializeField] private float enemySpawnInterval = 2f;
+    public float enemySpawnInterval;
 
     [Header("Obstacle Settings")]
     [SerializeField] private List<GameObject> obstaclePrefabs;
-    [SerializeField] private float obstacleSpawnInterval = 4f;
+    public float obstacleSpawnInterval = 4f;
 
     [Header("Special Item Settings")]
     [SerializeField] private GameObject specialItemPrefab;

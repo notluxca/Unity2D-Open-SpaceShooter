@@ -29,11 +29,19 @@ public class EnemyShipFollower : Damageable
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
+    protected override void Die()
+    {
+        FindAnyObjectByType<ScoreManager>().AddScore(10);
+        Debug.Log("Enemy Ship Died");
+        base.Die();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Verifica se colidiu com algo na layer do player
         if ((playerLayerMask.value & (1 << other.gameObject.layer)) != 0)
         {
+            other.GetComponent<Damageable>().TakeDamage(1f);
             Destroy(gameObject);
         }
     }
