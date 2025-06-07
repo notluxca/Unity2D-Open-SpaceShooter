@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class BulletBehavior : MonoBehaviour
     [SerializeField] private float speed = 10f;
     Vector3 viewportPos;
     public LayerMask targetLayer;
+    public static Action hit;
 
     private void OnEnable()
     {
@@ -52,6 +54,7 @@ public class BulletBehavior : MonoBehaviour
         if (damageable != null)
         {
             damageable.TakeDamage(1f);
+            hit?.Invoke();
             Destroy(gameObject);
         }
     }

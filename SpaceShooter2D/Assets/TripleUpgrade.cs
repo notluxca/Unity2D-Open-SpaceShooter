@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 public class TripleUpgrade : MonoBehaviour
 {
     public float speed = 5f;
+    public static Action UpgradePickUp;
 
     private void Start()
     {
@@ -24,6 +26,7 @@ public class TripleUpgrade : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            UpgradePickUp?.Invoke();
             other.gameObject.GetComponent<ShootController>().ActivateTripleShot(10f);
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public enum BulletType
 {
@@ -14,11 +15,13 @@ public class ShootController : MonoBehaviour
     public BulletType bulletType = BulletType.SINGLE;
 
     private Coroutine tripleShotCoroutine;
+    public static Action OnShoot;
 
     public void Shoot()
     {
         GameObject prefabToUse = bulletType == BulletType.SINGLE ? singleBulletPrefab : tripleBulletPrefab;
         Instantiate(prefabToUse, transform.position, Quaternion.identity);
+        OnShoot.Invoke();
     }
 
     public void SetBulletType(BulletType type)

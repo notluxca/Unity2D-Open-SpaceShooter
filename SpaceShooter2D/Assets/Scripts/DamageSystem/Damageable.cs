@@ -1,5 +1,6 @@
 using UnityEngine;
-using DG.Tweening; // Importante para usar DOTween
+using DG.Tweening;
+using System; // Importante para usar DOTween
 
 [RequireComponent(typeof(Collider2D))]
 public abstract class Damageable : MonoBehaviour, IDamageable
@@ -17,6 +18,8 @@ public abstract class Damageable : MonoBehaviour, IDamageable
     private SpriteRenderer spriteRenderer;
     private Vector3 originalScale;
     private Color originalColor;
+
+    public static Action Death;
 
     protected virtual void Awake()
     {
@@ -39,6 +42,7 @@ public abstract class Damageable : MonoBehaviour, IDamageable
 
         if (currentHealth <= 0)
         {
+            Death?.Invoke();
             Die();
         }
     }
