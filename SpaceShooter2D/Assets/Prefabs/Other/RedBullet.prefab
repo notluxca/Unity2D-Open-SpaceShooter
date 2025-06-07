@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 809865438017796133}
   - component: {fileID: 2257269002913417023}
   m_Layer: 6
-  m_Name: Bullet
+  m_Name: RedBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2346302928887187388, guid: b5023d386d8849043b7b3ee35a772cc3, type: 3}
+  m_Sprite: {fileID: -7509381387061955075, guid: a46f56b0e57b2f4439340876d8202986, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   speed: 10
   targetLayer:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 8
 --- !u!61 &2257269002913417023
 BoxCollider2D:
   m_ObjectHideFlags: 0

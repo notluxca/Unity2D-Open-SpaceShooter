@@ -1,9 +1,11 @@
+using NUnit.Framework;
 using UnityEngine;
 
 public class BulletBehavior : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
     Vector3 viewportPos;
+    public LayerMask targetLayer;
 
     private void OnEnable()
     {
@@ -42,7 +44,10 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("trigger");
+
+        if ((targetLayer.value & (1 << other.gameObject.layer)) == 0)
+            return;
+
         Damageable damageable = other.GetComponent<Damageable>();
         if (damageable != null)
         {
