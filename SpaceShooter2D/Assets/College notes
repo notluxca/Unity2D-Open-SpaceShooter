@@ -1,15 +1,9 @@
 O jogo deve no mínimo conter:
 
 Telas de título, instruções, jogo e game over;
-
-Sistema de vidas ou de escudos; -- Life System working DONE
-
-Pelo menos dois tipos de tiros, um deles deve ser adquirido durante o jogo, deve fazer uso do mesmo botão de entrada. Os tiros devem ter comportamentos e animações diferentes. -- DONE
-
-Pelo menos dois tipos de inimigos com comportamentos e animações diferentes, obstáculos não são inimigos; -- DONE
-
-Sistema de pontuação; -- DONE
-
+Sistema de vidas ou de escudos; 
+Pelo menos dois tipos de tiros, um deles deve ser adquirido durante o jogo, deve fazer uso do mesmo botão de entrada. Os tiros devem ter comportamentos e animações diferentes. 
+Pelo menos dois tipos de inimigos com comportamentos e animações diferentes, obstáculos não são inimigos; 
+Sistema de pontuação; 
 Animações e sons;
-
 Um inimigo chefe que precisa ser derrotado para terminar o jogo.

@@ -1,0 +1,2 @@
+This project was develop for 3:4 aspect ration
+altough this can be easily changed since game entities will work properly in any aspect
